@@ -2,16 +2,20 @@ using UnityEngine;
 
 public class TileBreakFollow : MonoBehaviour
 {
+    public Transform player; // Reference to the player object
+    public float distance = 10f; // Desired distance from the player
+
     void Update()
     {
-        // Get the mouse position in screen coordinates with the z-coordinate set to the distance from the camera
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = Mathf.Abs(Camera.main.transform.position.z);
+        // Calculate the position offset based on the player's Y rotation
+        Vector3 offset = Quaternion.Euler(0f, player.rotation.eulerAngles.y, 0f) * Vector3.forward * distance;
 
-        // Convert the screen coordinates to world coordinates
-        Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        // Calculate the target position based on the player's position and the offset
+        Vector3 targetPosition = player.position + offset;
 
-        // Update the position of the object to the world mouse position
-        transform.position = worldMousePosition;
+        // Set the target object's position
+        gameObject.transform.position = targetPosition;
+
+        // Rotate the object to match the player's rotation
     }
 }
