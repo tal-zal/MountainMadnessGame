@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        Console.WriteLine("Created player!!!");
         rb = GetComponent<Rigidbody>();
     }
 
