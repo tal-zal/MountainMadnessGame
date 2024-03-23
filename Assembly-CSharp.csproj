@@ -62,6 +62,8 @@
   <ItemGroup>
     <Compile Include="Assets\FollowPlayer.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
+    <Compile Include="Assets\TileBreakFollow.cs" />
+    <Compile Include="Assets\PlayerVariables.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
