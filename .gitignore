@@ -261,7 +261,7 @@ UpgradeLog*.htm
 ServiceFabricBackup/
 *.rptproj.bak
 
-#Library/
+Library/
 Temp/
 
 
