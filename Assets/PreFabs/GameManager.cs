@@ -5,6 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    private int score = 0;
+
+    
+
     void Start()
     {
         
@@ -16,10 +21,8 @@ public class GameManager : MonoBehaviour
         
     }
 
-    // call this every new round.
-    void NewRound(){
-        // randomize placement and creation of cubes.
+    // TODO - score bar on the screen.
 
-    }
+    // shift camera view??
 
 }
