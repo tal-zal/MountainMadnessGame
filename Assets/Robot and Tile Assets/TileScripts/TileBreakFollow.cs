@@ -23,7 +23,7 @@ public class TileBreakFollow : MonoBehaviour
         transform.position = targetPosition;
 
         // Rotate the object to match the player's rotation
-        transform.rotation = Quaternion.Euler(0f, player.rotation.eulerAngles.y, 0f);
+        // transform.rotation = Quaternion.Euler(0f, player.rotation.eulerAngles.y, 0f);
 
         // Check for left mouse button press
         if (Input.GetMouseButtonDown(0))
