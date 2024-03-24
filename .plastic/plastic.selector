@@ -1,0 +1,4 @@
+repository "SpaceScrappers@tal_zal@cloud"
+  path "/"
+    br "/main"
+    co "/main"
