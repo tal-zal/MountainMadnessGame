@@ -3,7 +3,6 @@ using UnityEngine;
 public class TileBreakFollow : MonoBehaviour
 {
     public Transform player; // Reference to the player object
-    public GameObject prefabToSpawn; // Prefab to spawn
     public float distance = 2f; // Desired distance from the player
 
     void Update()
@@ -29,8 +28,8 @@ public class TileBreakFollow : MonoBehaviour
         // Check for left mouse button press
         if (Input.GetMouseButtonDown(0))
         {
-            // Spawn a new instance of the prefab at the current position
-            Instantiate(prefabToSpawn, transform.position, transform.rotation);
+            // Check if this is currently colliding with a tile. If yes, remove that tile.
+            
         }
     }
 }
