@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Console.WriteLine("Created player!!!");
         rb = GetComponent<Rigidbody>();
-
+        rb.useGravity = true; // Ensure gravity is enabled
         // rotate object
 
     }
@@ -33,13 +33,16 @@ public class PlayerMovement : MonoBehaviour
     Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
     float rayLength;
 
-    if (groundPlane.Raycast(cameraRay, out rayLength))
-    {
-        Vector3 pointToLook = cameraRay.GetPoint(rayLength);
-        Vector3 lookDirection = pointToLook - transform.position;
-        lookDirection.y = 0; // Keep the rotation flat (horizontal)
-        transform.rotation = Quaternion.LookRotation(lookDirection);
-    }
+   if (groundPlane.Raycast(cameraRay, out rayLength))
+{
+    Vector3 pointToLook = cameraRay.GetPoint(rayLength);
+    
+    // Ensure that the player only rotates around the y-axis
+    pointToLook.y = transform.position.y;
+
+    // Rotate the player to look at the point
+    transform.LookAt(pointToLook);
+}
 
     // Jumping
     if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
