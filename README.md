@@ -1,3 +1,5 @@
+Installation video instructions: https://www.youtube.com/watch?v=0LebQyDi-Wg
+
 Here is our game!
 
 To play: please see the root folder. It will have .7z file called WindowsGameBuild. Unity and github do not work well with each other (as I unfortunately learned), so trying to pull and build from Unity would not work well. Please unzip this file and run MountainMadness2024.exe.
